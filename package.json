@@ -1,0 +1,36 @@
+{
+  "name": "profero",
+  "version": "1.0.0",
+  "author": "stojg",
+  "license": "MIT",
+  "private": true,
+  "source": "src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build",
+    "lint": "eslint ./src",
+    "format": "prettier-standard --format"
+  },
+  "dependencies": {
+    "preact": "^10.13.2"
+  },
+  "devDependencies": {
+    "@babylonjs/core": "^5.52.0",
+    "@babylonjs/gui": "^5.52.0",
+    "@babylonjs/gui-editor": "^5.52.0",
+    "@babylonjs/inspector": "^5.52.0",
+    "@babylonjs/loaders": "^5.52.0",
+    "@babylonjs/materials": "^5.52.0",
+    "@babylonjs/serializers": "^5.52.0",
+    "@parcel/transformer-less": "2.8.3",
+    "@types/react": "^18.0.31",
+    "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.57.0",
+    "eslint": "^8.37.0",
+    "parcel": "latest",
+    "prettier": "^2.8.7",
+    "typescript": "^5.0.2"
+  }
+}
