@@ -1,12 +1,17 @@
-import { ArcRotateCamera, Engine, HemisphericLight, MeshBuilder, Scene, Vector3 } from '@babylonjs/core'
 import '@babylonjs/core/Debug/debugLayer' // Augments the scene with the debug methods
 import '@babylonjs/inspector' // Injects a local ES6 version of the inspector to prevent automatically relying on the none compatible version
-export default class Main {
+import { Engine } from '@babylonjs/core'
+import type { Scene } from '@babylonjs/core'
+import * as BABYLON from '@babylonjs/core'
+
+type P = {
+	CreateScene(e: Engine, c: HTMLCanvasElement): Scene
+}
+export default class Core {
 	private readonly canvas: HTMLCanvasElement
 
 	private readonly engine: Engine
-
-	private readonly scene: Scene
+	private scene: Scene
 
 	constructor() {
 		// create the canvas html element and attach it to the webpage
@@ -17,22 +22,11 @@ export default class Main {
 		document.body.appendChild(this.canvas)
 
 		this.engine = new Engine(this.canvas, true)
-		this.scene = new Scene(this.engine)
-
-		const camera: ArcRotateCamera = new ArcRotateCamera(
-			'Camera',
-			Math.PI / 2,
-			Math.PI / 2,
-			2,
-			Vector3.Zero(),
-			this.scene
-		)
-		camera.attachControl(this.canvas, true)
-		new HemisphericLight('light1', new Vector3(1, 1, 0), this.scene)
-		MeshBuilder.CreateSphere('sphere', { diameter: 1 }, this.scene)
 	}
 
-	start() {
+	start(createScene: (engine: BABYLON.Engine, canvas: HTMLCanvasElement) => Scene) {
+		this.scene = createScene(this.engine, this.canvas)
+
 		// hide/show the Inspector
 		window.addEventListener('keydown', ev => {
 			// Shift+Ctrl+Alt+I
