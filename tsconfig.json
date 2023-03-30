@@ -1,14 +1,10 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
-    "esModuleInterop": true,
-    "jsx": "react",
-    "jsxFactory": "h",
-    "lib": ["dom", "esnext"],
-    "module": "esnext",
-    "moduleResolution": "node",
-    "strict": true,
-    "target": "es5"
-  },
-  "include": ["src/**/*"]
+    /** parcel only allows these two following settings **/
+    "experimentalDecorators": true,
+    "jsxImportSource": "preact",
+    /** these are for the type check run on `yarn run ci`, see package.json */
+    "skipLibCheck": true,
+    "jsx": "react-jsx",
+  }
 }
