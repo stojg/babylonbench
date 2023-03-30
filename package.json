@@ -27,6 +27,7 @@
     "@babylonjs/loaders": "^5.52.0",
     "@babylonjs/materials": "^5.52.0",
     "@babylonjs/serializers": "^5.52.0",
+    "@parcel/transformer-glsl": "2.8.3",
     "@parcel/transformer-less": "2.8.3",
     "@parcel/transformer-typescript-tsc": "^2.8.3",
     "@typescript-eslint/eslint-plugin": "^5.57.0",
